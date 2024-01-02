@@ -1,0 +1,2 @@
+simulation/bot
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3/cmake.lock /home/straw/Documents/Spice/pink/devel/./cmake.lock

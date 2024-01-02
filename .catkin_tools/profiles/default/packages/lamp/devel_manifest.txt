@@ -1,0 +1,5 @@
+lamp
+/home/straw/Documents/Spice/pink/devel/.private/lamp/cmake.lock /home/straw/Documents/Spice/pink/devel/./cmake.lock
+/home/straw/Documents/Spice/pink/devel/.private/lamp/share/lamp/cmake/lampConfig-version.cmake /home/straw/Documents/Spice/pink/devel/share/lamp/cmake/lampConfig-version.cmake
+/home/straw/Documents/Spice/pink/devel/.private/lamp/share/lamp/cmake/lampConfig.cmake /home/straw/Documents/Spice/pink/devel/share/lamp/cmake/lampConfig.cmake
+/home/straw/Documents/Spice/pink/devel/.private/lamp/lib/pkgconfig/lamp.pc /home/straw/Documents/Spice/pink/devel/lib/pkgconfig/lamp.pc

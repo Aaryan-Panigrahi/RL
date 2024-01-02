@@ -1,0 +1,107 @@
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:275:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kwater::path_service[m[K’ has not been declared
+  275 |  bool process_path_service(water::[01;31m[Kpath_service[m[K::Request &req, water::path_service::Response &res){
+      |                                   [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:275:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K&[m[K’ token
+  275 |  bool process_path_service(water::path_service::Request [01;31m[K&[m[Kreq, water::path_service::Response &res){
+      |                                                         [01;31m[K^[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:[m[K In constructor ‘[01m[Kstart::start(int, char**)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:204:96:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kros::NodeHandle::advertiseService(const char [13], bool (start::*)(int), start*)[m[K’
+  204 |   this->path_service = node.advertiseService("path_service", &start::process_path_service, this[01;31m[K)[m[K;
+      |                                                                                                [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:879:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(MReq&, MRes&), T*)[m[K’
+  879 |   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(MReq &, MRes &), T *obj)
+      |                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:879:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:204:96:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[KMReq&[m[K’ and ‘[01m[Kint[m[K’
+  204 |   this->path_service = node.advertiseService("path_service", &start::process_path_service, this[01;36m[K)[m[K;
+      |                                                                                                [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:924:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(ros::ServiceEvent<MReq, MRes>&), T*)[m[K’
+  924 |   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(ServiceEvent<MReq, MRes>&), T *obj)
+      |                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:924:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:204:96:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kros::ServiceEvent<MReq, MRes>&[m[K’ and ‘[01m[Kint[m[K’
+  204 |   this->path_service = node.advertiseService("path_service", &start::process_path_service, this[01;36m[K)[m[K;
+      |                                                                                                [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:970:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(MReq&, MRes&), const boost::shared_ptr<X>&)[m[K’
+  970 |   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(MReq &, MRes &), const boost::shared_ptr<T>& obj)
+      |                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:970:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:204:96:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[KMReq&[m[K’ and ‘[01m[Kint[m[K’
+  204 |   this->path_service = node.advertiseService("path_service", &start::process_path_service, this[01;36m[K)[m[K;
+      |                                                                                                [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1017:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T, class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (T::*)(ros::ServiceEvent<MReq, MRes>&), const boost::shared_ptr<X>&)[m[K’
+ 1017 |   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(T::*srv_func)(ServiceEvent<MReq, MRes>&), const boost::shared_ptr<T>& obj)
+      |                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1017:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:204:96:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kros::ServiceEvent<MReq, MRes>&[m[K’ and ‘[01m[Kint[m[K’
+  204 |   this->path_service = node.advertiseService("path_service", &start::process_path_service, this[01;36m[K)[m[K;
+      |                                                                                                [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1061:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (*)(MReq&, MRes&))[m[K’
+ 1061 |   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(*srv_func)(MReq&, MRes&))
+      |                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1061:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:204:96:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (*)(MReq&, MRes&)[m[K’ and ‘[01m[Kbool (start::*)(int)[m[K’
+  204 |   this->path_service = node.advertiseService("path_service", &start::process_path_service, this[01;36m[K)[m[K;
+      |                                                                                                [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1104:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, bool (*)(ros::ServiceEvent<MReq, MRes>&))[m[K’
+ 1104 |   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, bool(*srv_func)(ServiceEvent<MReq, MRes>&))
+      |                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1104:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:204:96:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kbool (*)(ros::ServiceEvent<MReq, MRes>&)[m[K’ and ‘[01m[Kbool (start::*)(int)[m[K’
+  204 |   this->path_service = node.advertiseService("path_service", &start::process_path_service, this[01;36m[K)[m[K;
+      |                                                                                                [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1145:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MReq, class MRes> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, const boost::function<bool(MReq&, MRes&)>&, const VoidConstPtr&)[m[K’
+ 1145 |   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, const boost::function<bool(MReq&, MRes&)>& callback,
+      |                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1145:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:204:96:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst boost::function<bool(MReq&, MRes&)>[m[K’ and ‘[01m[Kbool (start::*)(int)[m[K’
+  204 |   this->path_service = node.advertiseService("path_service", &start::process_path_service, this[01;36m[K)[m[K;
+      |                                                                                                [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1190:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class S> ros::ServiceServer ros::NodeHandle::advertiseService(const string&, const boost::function<bool(S&)>&, const VoidConstPtr&)[m[K’
+ 1190 |   ServiceServer [01;36m[KadvertiseService[m[K(const std::string& service, const boost::function<bool(S&)>& callback,
+      |                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1190:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:204:96:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst boost::function<bool(S&)>[m[K’ and ‘[01m[Kbool (start::*)(int)[m[K’
+  204 |   this->path_service = node.advertiseService("path_service", &start::process_path_service, this[01;36m[K)[m[K;
+      |                                                                                                [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1222:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kros::ServiceServer ros::NodeHandle::advertiseService(ros::AdvertiseServiceOptions&)[m[K’
+ 1222 |   ServiceServer [01;36m[KadvertiseService[m[K(AdvertiseServiceOptions& ops);
+      |                 [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/node_handle.h:1222:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 3 provided
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:[m[K In member function ‘[01m[Kbool start::process_path_service(int)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:276:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kreq[m[K’ was not declared in this scope
+  276 |   geometry_msgs::PoseStamped goal = [01;31m[Kreq[m[K.goal_pose;
+      |                                     [01;31m[K^~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:277:82:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kgeometry_msgs::PoseStamped[m[K’ {aka ‘[01m[Kgeometry_msgs::PoseStamped_<std::allocator<void> >[m[K’} to ‘[01m[Kgeometry_msgs::Pose[m[K’ {aka ‘[01m[Kgeometry_msgs::Pose_<std::allocator<void> >[m[K’}
+  277 |   nav_msgs::Path path = this->occupancy_matrix.astar_path(this->bot_coordinates, [01;31m[Kgoal[m[K);
+      |                                                                                  [01;31m[K^~~~[m[K
+      |                                                                                  [01;31m[K|[m[K
+      |                                                                                  [01;31m[Kgeometry_msgs::PoseStamped {aka geometry_msgs::PoseStamped_<std::allocator<void> >}[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:36:75:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Knav_msgs::Path graph::astar_path(geometry_msgs::Pose, geometry_msgs::Pose)[m[K’
+   36 |  nav_msgs::Path astar_path(geometry_msgs::Pose start, [01;36m[Kgeometry_msgs::Pose end[m[K){
+      |                                                       [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:278:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kres[m[K’ was not declared in this scope; did you mean ‘[01m[Kros[m[K’?
+  278 |   [01;31m[Kres[m[K.path = path;
+      |   [01;31m[K^~~[m[K
+      |   [32m[Kros[m[K
+make[2]: *** [CMakeFiles/autonav.dir/build.make:63: CMakeFiles/autonav.dir/src/auto_nav.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1673: CMakeFiles/autonav.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

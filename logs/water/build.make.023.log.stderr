@@ -1,0 +1,13 @@
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:[m[K In member function ‘[01m[Knav_msgs::Path graph::astar_path(geometry_msgs::Pose, geometry_msgs::Pose)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:58:41:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kros::Time::now(int)[m[K’
+   58 |     path.header.stamp = ros::Time::now(0[01;31m[K)[m[K;
+      |                                         [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:38[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:6[m[K:
+[01m[K/opt/ros/noetic/include/ros/time.h:191:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstatic ros::Time ros::Time::now()[m[K’
+  191 |     static Time [01;36m[Know[m[K();
+      |                 [01;36m[K^~~[m[K
+[01m[K/opt/ros/noetic/include/ros/time.h:191:17:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+make[2]: *** [CMakeFiles/autonav.dir/build.make:63: CMakeFiles/autonav.dir/src/auto_nav.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:439: CMakeFiles/autonav.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

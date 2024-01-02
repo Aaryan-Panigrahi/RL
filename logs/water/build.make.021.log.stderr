@@ -1,0 +1,10 @@
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:[m[K In member function ‘[01m[Knav_msgs::Path graph::astar_path(geometry_msgs::Pose, geometry_msgs::Pose)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:67:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::priority_queue<std::tuple<double, double, long long int> >[m[K’ has no member named ‘[01m[Kpush_back[m[K’
+   67 |      open_set.[01;31m[Kpush_back[m[K(std::make_tuple(-f_cost[neighbour], potential_g, neighbour));
+      |               [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:71:2:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+   71 |  [01;35m[K}[m[K
+      |  [01;35m[K^[m[K
+make[2]: *** [CMakeFiles/autonav.dir/build.make:63: CMakeFiles/autonav.dir/src/auto_nav.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:439: CMakeFiles/autonav.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

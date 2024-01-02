@@ -1,0 +1,36 @@
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:8:23:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf::TransformListener tf[m[K’ redeclared as different kind of entity
+    8 | tf::TransformListener [01;31m[Ktf[m[K;
+      |                       [01;31m[K^~[m[K
+In file included from [01m[K/opt/ros/noetic/include/tf/tf.h:43[m[K,
+                 from [01m[K/opt/ros/noetic/include/laser_geometry/laser_geometry.h:40[m[K,
+                 from [01m[K/opt/ros/noetic/include/costmap_2d/obstacle_layer.h:49[m[K,
+                 from [01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:4[m[K:
+[01m[K/opt/ros/noetic/include/tf/exceptions.h:38:11:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Knamespace tf { }[m[K’
+   38 | namespace [01;36m[Ktf[m[K{
+      |           [01;36m[K^~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:[m[K In function ‘[01m[Kvoid laserCallback(const ConstPtr&)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:14:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetOriginX[m[K’
+   14 |   obstacle_layer->updateBounds(costmap_ros->[01;31m[KgetOriginX[m[K(), costmap_ros->getOriginY(),
+      |                                             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:14:72:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetOriginY[m[K’
+   14 |   obstacle_layer->updateBounds(costmap_ros->getOriginX(), costmap_ros->[01;31m[KgetOriginY[m[K(),
+      |                                                                        [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:15:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetSizeInCellsX[m[K’
+   15 |                                costmap_ros->[01;31m[KgetSizeInCellsX[m[K(), costmap_ros->getSizeInCellsY(),
+      |                                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:15:77:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetSizeInCellsY[m[K’
+   15 |                                costmap_ros->getSizeInCellsX(), costmap_ros->[01;31m[KgetSizeInCellsY[m[K(),
+      |                                                                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:16:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetResolution[m[K’
+   16 |                                costmap_ros->[01;31m[KgetResolution[m[K(), costmap_ros->getRobotFootprint());
+      |                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:18:59:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetStaticLayer[m[K’
+   18 |   obstacle_layer->updateCosts(*costmap_ros, *costmap_ros->[01;31m[KgetStaticLayer[m[K(), costmap_ros->getCostmap());
+      |                                                           [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:31:66:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   31 |   costmap_ros.reset(new costmap_2d::Costmap2DROS("my_costmap", tf[01;31m[K)[m[K);
+      |                                                                  [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/costmap.dir/build.make:63: CMakeFiles/costmap.dir/src/costmap.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:852: CMakeFiles/costmap.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

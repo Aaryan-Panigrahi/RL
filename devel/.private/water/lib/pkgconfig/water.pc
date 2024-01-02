@@ -1,0 +1,8 @@
+prefix=/home/straw/Documents/Spice/pink/devel/.private/water
+
+Name: water
+Description: Description of water
+Version: 0.0.0
+Cflags: -I/home/straw/Documents/Spice/pink/devel/.private/water/include -I/home/straw/Documents/Spice/pink/src/water/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy tf2 tf2_ros

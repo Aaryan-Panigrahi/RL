@@ -1,0 +1,12 @@
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:[m[K In member function ‘[01m[Kbool start::process_path_service(water::path::Request&, water::path::Response&)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:277:82:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kgeometry_msgs::PoseStamped[m[K’ {aka ‘[01m[Kgeometry_msgs::PoseStamped_<std::allocator<void> >[m[K’} to ‘[01m[Kgeometry_msgs::Pose[m[K’ {aka ‘[01m[Kgeometry_msgs::Pose_<std::allocator<void> >[m[K’}
+  277 |   nav_msgs::Path path = this->occupancy_matrix.astar_path(this->bot_coordinates, [01;31m[Kgoal[m[K);
+      |                                                                                  [01;31m[K^~~~[m[K
+      |                                                                                  [01;31m[K|[m[K
+      |                                                                                  [01;31m[Kgeometry_msgs::PoseStamped {aka geometry_msgs::PoseStamped_<std::allocator<void> >}[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:36:75:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Knav_msgs::Path graph::astar_path(geometry_msgs::Pose, geometry_msgs::Pose)[m[K’
+   36 |  nav_msgs::Path astar_path(geometry_msgs::Pose start, [01;36m[Kgeometry_msgs::Pose end[m[K){
+      |                                                       [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~[m[K
+make[2]: *** [CMakeFiles/autonav.dir/build.make:63: CMakeFiles/autonav.dir/src/auto_nav.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1673: CMakeFiles/autonav.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

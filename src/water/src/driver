@@ -1,0 +1,240 @@
+#! /usr/bin/python3
+
+import os
+import time
+import numpy as np
+
+import rospy
+from nav_msgs.msg import Path, Odometry
+from geometry_msgs.msg import Pose, Point, Quaternion, PoseStamped, Twist
+from visualization_msgs.msg import Marker
+from sensor_msgs.msg import LaserScan
+from std_srvs.srv import Empty
+from water.srv import path as path_service
+
+from agent import model, actions, state, agent
+
+actions.min_linear_vel = -0.2
+actions.max_linear_vel = 0.8
+
+actions.min_angular_vel = 0.6
+actions.max_angular_vel = -0.6
+
+actions.linear_vel_buckets = 5
+actions.angular_vel_buckets = 6
+
+class driver():
+
+    def __init__(self):
+
+        rospy.init_node("driver")
+        actions.update()
+
+        self.agent = agent(
+            orientation_length=6,
+            scan_length=640,
+            n_actions=len(actions.activity),
+            alpha=0.0003,
+            gamma=0.99,
+            epsilon=1,
+            reuse=False
+        )
+        
+        self.goal_marker = Marker()
+        self.goal_marker.header.frame_id = "odom"
+        self.goal_marker.ns = "goal"
+        self.goal_marker.id = 0
+        self.goal_marker.type = Marker.SPHERE
+        self.goal_marker.action = Marker.ADD
+        self.goal_marker.color.r = 1
+        self.goal_marker.color.g = 0
+        self.goal_marker.color.b = 1
+        self.goal_marker.color.a = 1
+
+        self.goal_tolerance = 0.5
+        self.decay = 0.9999
+        self.episode_count = 1
+        self.episode_reward_return = 0
+
+        self.velocity = Twist()
+        self.velocity.linear.x = 0
+        self.velocity.angular.z = 0
+
+        # tracking variables
+        self.relative_current_state:state = None
+        self.relative_current_action:int = None
+        self.path:Path = None
+        self.goal:PoseStamped = None
+        self.scan:np.ndarray = None
+
+        self.path_publisher = rospy.Publisher("/path", Path, queue_size=10) 
+        self.mark_publisher = rospy.Publisher("/goal", Marker, queue_size=10) 
+        self.velocity_publisher = rospy.Publisher("/cmd_vel", Twist, queue_size=10)
+        self.odom_subscriber = rospy.Subscriber("/odom", Odometry, self.process_odom)
+        self.coordinates_subscriber = rospy.Subscriber("/bot_coordinates", Pose, self.process_coordinates)
+        self.scan_subscriber = rospy.Subscriber("/scan", LaserScan, self.process_scan)
+        self.bot_coordinates:Pose = None
+
+        print("started...")
+        while not rospy.is_shutdown():
+            if (self.path is None or self.scan is None):
+                self.generate_random_goal()
+                self.process_goal()
+                continue
+
+            self.mark_publisher.publish(self.goal_marker)
+
+            dx = self.goal.pose.position.x - self.bot_coordinates.position.x
+            dy = self.goal.pose.position.y - self.bot_coordinates.position.y
+            
+            target_steer_angle = np.arctan2(dy, dx)
+            bot_steer_angle = np.arctan2(self.bot_coordinates.orientation.z,
+                    self.bot_coordinates.orientation.w) * 2
+            delta_theta = target_steer_angle - bot_steer_angle
+
+            new_orientation = np.array([
+                                    np.sin(delta_theta), np.cos(delta_theta),
+                                    np.sin(2*delta_theta), np.cos(2*delta_theta),
+                                    np.sin(3*delta_theta), np.cos(3*delta_theta)
+                                ])
+            new_scan = self.scan
+            new_state = state(new_orientation, new_scan)
+
+            new_action = self.agent.choose_action(new_state, echo=False)
+            self.take_action(new_action)
+
+            if (None in (self.relative_current_state, self.relative_current_action)):
+                self.relative_current_state = new_state
+                self.relative_current_action = new_action
+                continue
+
+            reached = self.reached()
+            lost = self.lost(24)
+            crashed = self.crashed(new_scan)
+
+            reward = self.reward_function(self.relative_current_state, new_state)
+            done = int(reached or lost or crashed)
+
+            self.agent.learn(self.relative_current_state,
+                    new_state,
+                    self.relative_current_action,
+                    reward,
+                    done)
+
+            self.relative_current_state = new_state
+            self.relative_current_action = new_action
+            self.episode_reward_return += reward
+
+            self.agent.epsilon = self.agent.epsilon * self.decay
+
+            if (done):
+                self.respawn_and_reset()
+                self.agent.update_main_model()
+                start = "\033[96m" if reached else "\033[93m"
+                print(f"{start}episode={self.episode_count} return={self.episode_reward_return} exploration={self.agent.epsilon}")
+                self.episode_count += 1
+                self.episode_reward_return = 0
+                self.save(os.sys.argv[1])
+                self.path = None
+
+    def take_action(self, action):
+        v, w = actions.activity[action]
+        self.velocity.linear.x = v
+        self.velocity.angular.z = w
+        self.velocity_publisher.publish(self.velocity)
+
+    def reached(self):
+        if (self.goal is None or self.bot_coordinates is None):
+            return False
+        goal = self.goal.pose
+
+        dx = self.goal.pose.position.x - self.bot_coordinates.position.x
+        dy = self.goal.pose.position.y - self.bot_coordinates.position.y
+
+        return dx*dx + dy*dy < self.goal_tolerance*self.goal_tolerance
+
+    def crashed(self, scan):
+
+        min_range = scan.min()
+        return min_range < 2e-4
+
+    def smallest_distance_from_path(self):
+
+        min_d = 100000
+        for pose in self.path.poses:
+            
+            target_point = pose.pose.position
+
+            dx = target_point.x - self.bot_coordinates.position.x
+            dy = target_point.y - self.bot_coordinates.position.y
+            d = dx*dx + dy*dy
+
+            min_d = min(min_d, d)
+
+        return min_d
+
+    def lost(self, distance):
+
+        min_d = self.smallest_distance_from_path()
+        return min_d >= distance*distance
+
+    def save(self, name):
+        self.agent.save(f"{name}.pth")
+        actions.save(f"{name}.json")
+
+    def reward_function(self, current_state, next_state):
+        return 0
+
+    def generate_random_goal(self):
+        goal = PoseStamped()
+        goal.pose.position = Point(7.8, -7, 0)
+        goal.pose.orientation = Quaternion(0, 0, 0, 1)
+
+        self.goal_marker.pose.position = goal.pose.position
+        self.goal_marker.pose.orientation = goal.pose.orientation
+        self.goal_marker.scale.x = 2 * self.goal_tolerance
+        self.goal_marker.scale.y = 2 * self.goal_tolerance
+        self.goal_marker.scale.z = 2 * self.goal_tolerance
+
+        self.goal = goal
+
+    def process_odom(self, odom):
+        return 
+        #self.bot_coordinates = odom.pose.pose
+
+    def process_coordinates(self, coordinates):
+        self.bot_coordinates = coordinates
+
+    def process_scan(self, scan):
+        min_range = scan.range_min
+        max_range = scan.range_max
+        scan = np.array(scan.ranges)
+        self.scan = (scan - min_range) / (max_range - min_range)
+
+    def process_goal(self):
+        if (self.bot_coordinates is None or self.goal is None):
+            return 
+        try:
+            path_srv = rospy.ServiceProxy("path_service", path_service)
+            self.path = path_srv(self.goal).path
+
+        except rospy.ServiceException as e:
+            self.path = None
+            print(f"{type(e)}: {e}")
+            return
+      
+        self.path.header.frame_id = "map"
+        self.path_publisher.publish(self.path)
+        #print("published a path")
+
+    def respawn_and_reset(self):
+        try:
+            reset = rospy.ServiceProxy("/gazebo/reset_world", Empty)
+            reset()
+        except rospy.ServiceException as e:
+            print(f"{type(e)}: {e}")
+
+
+if __name__ == "__main__":
+    driver()
+

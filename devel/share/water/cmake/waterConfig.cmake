@@ -1,0 +1,1 @@
+/home/straw/Documents/Spice/pink/devel/.private/water/share/water/cmake/waterConfig.cmake

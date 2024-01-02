@@ -1,0 +1,15 @@
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:[m[K In member function ‘[01m[Kvoid graph::fill_outlines(int)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:125:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kis_duplicaten[m[K’ was not declared in this scope; did you mean ‘[01m[Kis_duplicate[m[K’?
+  125 |     if (this->map.data[n] == 100 && ![01;31m[Kis_duplicaten[m[K[n]){
+      |                                      [01;31m[K^~~~~~~~~~~~~[m[K
+      |                                      [32m[Kis_duplicate[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:[m[K In member function ‘[01m[Kvoid start::get_map(const ConstPtr&)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:265:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid graph::fill_outlines(int)[m[K’ is private within this context
+  265 |   this->occupancy_matrix.fill_outlines(2[01;31m[K)[m[K;
+      |                                         [01;31m[K^[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:119:7:[m[K [01;36m[Knote: [m[Kdeclared private here
+  119 |  void [01;36m[Kfill_outlines[m[K(int depth){
+      |       [01;36m[K^~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/autonav.dir/build.make:63: CMakeFiles/autonav.dir/src/auto_nav.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:209: CMakeFiles/autonav.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

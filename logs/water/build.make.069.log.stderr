@@ -1,0 +1,7 @@
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:[m[K In constructor ‘[01m[Kstart::start(int, char**)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/water/src/auto_nav.cpp:203:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass start[m[K’ has no member named ‘[01m[Kcoordinates_pub[m[K’
+  203 |   this->[01;31m[Kcoordinates_pub[m[K = node.advertise<geometry_msgs::Pose>("/bot_coordinates", 100, true);
+      |         [01;31m[K^~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/autonav.dir/build.make:63: CMakeFiles/autonav.dir/src/auto_nav.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1673: CMakeFiles/autonav.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

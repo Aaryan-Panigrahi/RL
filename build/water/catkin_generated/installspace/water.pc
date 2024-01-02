@@ -1,0 +1,8 @@
+prefix=/home/straw/Documents/Spice/pink/install
+
+Name: water
+Description: Description of water
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy tf2 tf2_ros

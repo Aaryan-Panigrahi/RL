@@ -1,0 +1,5 @@
+simulation/description
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3_description/cmake.lock /home/straw/Documents/Spice/pink/devel/./cmake.lock
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3_description/share/turtlebot3_description/cmake/turtlebot3_descriptionConfig-version.cmake /home/straw/Documents/Spice/pink/devel/share/turtlebot3_description/cmake/turtlebot3_descriptionConfig-version.cmake
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3_description/share/turtlebot3_description/cmake/turtlebot3_descriptionConfig.cmake /home/straw/Documents/Spice/pink/devel/share/turtlebot3_description/cmake/turtlebot3_descriptionConfig.cmake
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3_description/lib/pkgconfig/turtlebot3_description.pc /home/straw/Documents/Spice/pink/devel/lib/pkgconfig/turtlebot3_description.pc

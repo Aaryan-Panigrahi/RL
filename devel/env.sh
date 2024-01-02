@@ -1,0 +1,1 @@
+/home/straw/Documents/Spice/pink/devel/.private/catkin_tools_prebuild/env.sh

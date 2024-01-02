@@ -1,0 +1,21 @@
+Symlinking /home/straw/Documents/Spice/pink/devel/include/water/pathResponse.h
+Symlinking /home/straw/Documents/Spice/pink/devel/include/water/pathRequest.h
+Symlinking /home/straw/Documents/Spice/pink/devel/include/water/path.h
+Symlinking /home/straw/Documents/Spice/pink/devel/share/gennodejs/ros/water/_index.js
+Symlinking /home/straw/Documents/Spice/pink/devel/share/gennodejs/ros/water/srv/path.js
+Symlinking /home/straw/Documents/Spice/pink/devel/share/gennodejs/ros/water/srv/_index.js
+Symlinking /home/straw/Documents/Spice/pink/devel/share/common-lisp/ros/water/srv/water-srv.asd
+Symlinking /home/straw/Documents/Spice/pink/devel/share/common-lisp/ros/water/srv/_package_path.lisp
+Symlinking /home/straw/Documents/Spice/pink/devel/share/common-lisp/ros/water/srv/_package.lisp
+Symlinking /home/straw/Documents/Spice/pink/devel/share/common-lisp/ros/water/srv/path.lisp
+Symlinking /home/straw/Documents/Spice/pink/devel/share/water/cmake/water-msg-paths.cmake
+Linked: (/home/straw/Documents/Spice/pink/devel/.private/water/share/water/cmake/waterConfig-version.cmake, /home/straw/Documents/Spice/pink/devel/share/water/cmake/waterConfig-version.cmake)
+Linked: (/home/straw/Documents/Spice/pink/devel/.private/water/share/water/cmake/waterConfig.cmake, /home/straw/Documents/Spice/pink/devel/share/water/cmake/waterConfig.cmake)
+Symlinking /home/straw/Documents/Spice/pink/devel/share/water/cmake/water-msg-extras.cmake
+Symlinking /home/straw/Documents/Spice/pink/devel/share/roseus/ros/water/manifest.l
+Symlinking /home/straw/Documents/Spice/pink/devel/share/roseus/ros/water/srv/path.l
+Symlinking /home/straw/Documents/Spice/pink/devel/lib/python3/dist-packages/water/__init__.py
+Symlinking /home/straw/Documents/Spice/pink/devel/lib/python3/dist-packages/water/srv/_path.py
+Symlinking /home/straw/Documents/Spice/pink/devel/lib/python3/dist-packages/water/srv/__init__.py
+Linked: (/home/straw/Documents/Spice/pink/devel/.private/water/lib/water/autonav, /home/straw/Documents/Spice/pink/devel/lib/water/autonav)
+Linked: (/home/straw/Documents/Spice/pink/devel/.private/water/lib/pkgconfig/water.pc, /home/straw/Documents/Spice/pink/devel/lib/pkgconfig/water.pc)

@@ -1,0 +1,6 @@
+devel_space: /home/straw/Documents/Spice/pink/devel
+install: false
+install_space: /home/straw/Documents/Spice/pink/install
+profile: default
+source_space: /home/straw/Documents/Spice/pink/src
+workspace: /home/straw/Documents/Spice/pink

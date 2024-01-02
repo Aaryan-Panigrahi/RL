@@ -1,0 +1,14 @@
+/usr/bin/ld: CMakeFiles/autonav.dir/src/auto_nav.cpp.o: in function `start::start(int, char**)':
+auto_nav.cpp:(.text._ZN5startC2EiPPc[_ZN5startC5EiPPc]+0x7e): undefined reference to `tf2_ros::Buffer::Buffer(ros::Duration, bool)'
+/usr/bin/ld: auto_nav.cpp:(.text._ZN5startC2EiPPc[_ZN5startC5EiPPc]+0x21a): undefined reference to `tf2_ros::TransformListener::TransformListener(tf2::BufferCore&, bool, ros::TransportHints)'
+/usr/bin/ld: auto_nav.cpp:(.text._ZN5startC2EiPPc[_ZN5startC5EiPPc]+0x238): undefined reference to `tf2_ros::TransformListener::~TransformListener()'
+/usr/bin/ld: CMakeFiles/autonav.dir/src/auto_nav.cpp.o: in function `start::run(int)':
+auto_nav.cpp:(.text._ZN5start3runEi[_ZN5start3runEi]+0x13b): undefined reference to `tf2_ros::Buffer::lookupTransform(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ros::Time const&, ros::Duration) const'
+/usr/bin/ld: CMakeFiles/autonav.dir/src/auto_nav.cpp.o: in function `tf2_ros::Buffer::~Buffer()':
+auto_nav.cpp:(.text._ZN7tf2_ros6BufferD2Ev[_ZN7tf2_ros6BufferD5Ev]+0x13): undefined reference to `vtable for tf2_ros::Buffer'
+/usr/bin/ld: auto_nav.cpp:(.text._ZN7tf2_ros6BufferD2Ev[_ZN7tf2_ros6BufferD5Ev]+0x21): undefined reference to `vtable for tf2_ros::Buffer'
+/usr/bin/ld: auto_nav.cpp:(.text._ZN7tf2_ros6BufferD2Ev[_ZN7tf2_ros6BufferD5Ev]+0x4b): undefined reference to `tf2::BufferCore::~BufferCore()'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/autonav.dir/build.make:101: /home/straw/Documents/Spice/pink/devel/.private/water/lib/water/autonav] Error 1
+make[1]: *** [CMakeFiles/Makefile2:439: CMakeFiles/autonav.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

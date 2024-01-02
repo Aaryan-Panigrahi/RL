@@ -1,0 +1,30 @@
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:7:5:[m[K [01;31m[Kerror: [m[K‘[01m[KTransformListener[m[K’ in namespace ‘[01m[Ktf[m[K’ does not name a type; did you mean ‘[01m[KTransformLists[m[K’?
+    7 | tf::[01;31m[KTransformListener[m[K tf;
+      |     [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |     [32m[KTransformLists[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:[m[K In function ‘[01m[Kvoid laserCallback(const ConstPtr&)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:13:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetOriginX[m[K’
+   13 |   obstacle_layer->updateBounds(costmap_ros->[01;31m[KgetOriginX[m[K(), costmap_ros->getOriginY(),
+      |                                             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:13:72:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetOriginY[m[K’
+   13 |   obstacle_layer->updateBounds(costmap_ros->getOriginX(), costmap_ros->[01;31m[KgetOriginY[m[K(),
+      |                                                                        [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:14:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetSizeInCellsX[m[K’
+   14 |                                costmap_ros->[01;31m[KgetSizeInCellsX[m[K(), costmap_ros->getSizeInCellsY(),
+      |                                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:14:77:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetSizeInCellsY[m[K’
+   14 |                                costmap_ros->getSizeInCellsX(), costmap_ros->[01;31m[KgetSizeInCellsY[m[K(),
+      |                                                                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:15:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetResolution[m[K’
+   15 |                                costmap_ros->[01;31m[KgetResolution[m[K(), costmap_ros->getRobotFootprint());
+      |                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:17:59:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass costmap_2d::Costmap2DROS[m[K’ has no member named ‘[01m[KgetStaticLayer[m[K’
+   17 |   obstacle_layer->updateCosts(*costmap_ros, *costmap_ros->[01;31m[KgetStaticLayer[m[K(), costmap_ros->getCostmap());
+      |                                                           [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/straw/Documents/Spice/pink/src/simulation/src/costmap.cpp:30:66:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   30 |   costmap_ros.reset(new costmap_2d::Costmap2DROS("my_costmap", tf[01;31m[K)[m[K);
+      |                                                                  [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/costmap.dir/build.make:63: CMakeFiles/costmap.dir/src/costmap.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:852: CMakeFiles/costmap.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

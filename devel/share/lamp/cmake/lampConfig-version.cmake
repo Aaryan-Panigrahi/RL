@@ -1,0 +1,1 @@
+/home/straw/Documents/Spice/pink/devel/.private/lamp/share/lamp/cmake/lampConfig-version.cmake

@@ -1,0 +1,6 @@
+simulation/bringup
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3_bringup/cmake.lock /home/straw/Documents/Spice/pink/devel/./cmake.lock
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3_bringup/share/turtlebot3_bringup/cmake/turtlebot3_bringupConfig-version.cmake /home/straw/Documents/Spice/pink/devel/share/turtlebot3_bringup/cmake/turtlebot3_bringupConfig-version.cmake
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3_bringup/share/turtlebot3_bringup/cmake/turtlebot3_bringupConfig.cmake /home/straw/Documents/Spice/pink/devel/share/turtlebot3_bringup/cmake/turtlebot3_bringupConfig.cmake
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3_bringup/lib/pkgconfig/turtlebot3_bringup.pc /home/straw/Documents/Spice/pink/devel/lib/pkgconfig/turtlebot3_bringup.pc
+/home/straw/Documents/Spice/pink/devel/.private/turtlebot3_bringup/lib/turtlebot3_bringup/turtlebot3_diagnostics /home/straw/Documents/Spice/pink/devel/lib/turtlebot3_bringup/turtlebot3_diagnostics

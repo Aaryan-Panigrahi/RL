@@ -1,0 +1,8 @@
+prefix=/home/straw/Documents/Spice/pink/devel/.private/lamp
+
+Name: lamp
+Description: Description of lamp
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
